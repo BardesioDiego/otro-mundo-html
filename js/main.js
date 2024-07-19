@@ -68,3 +68,17 @@
     
 })(jQuery);
 
+//boton ver mas
+$(document).ready(function() {
+    $('.btn-ver-mas').click(function() {
+        $('.package-details').slideDown();
+        $(this).hide();
+        $('.btn-ver-menos').show();
+    });
+
+    $('.btn-ver-menos').click(function() {
+        $('.package-details').slideUp();
+        $(this).hide();
+        $('.btn-ver-mas').show();
+    });
+});
