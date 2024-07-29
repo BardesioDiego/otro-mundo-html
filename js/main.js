@@ -69,16 +69,27 @@
 })(jQuery);
 
 //boton ver mas
-$(document).ready(function() {
-    $('.btn-ver-mas').click(function() {
-        $('.package-details').slideDown();
-        $(this).hide();
-        $('.btn-ver-menos').show();
+document.addEventListener('DOMContentLoaded', function() {
+    const verMasButtons = document.querySelectorAll('.btn-ver-mas');
+    const verMenosButtons = document.querySelectorAll('.btn-ver-menos');
+
+    verMasButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const packageDetails = this.closest('.package-item').querySelector('.package-details');
+            const verMenosButton = this.nextElementSibling;
+            packageDetails.style.display = 'block';
+            this.style.display = 'none';
+            verMenosButton.style.display = 'inline-block';
+        });
     });
 
-    $('.btn-ver-menos').click(function() {
-        $('.package-details').slideUp();
-        $(this).hide();
-        $('.btn-ver-mas').show();
+    verMenosButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const packageDetails = this.closest('.package-item').querySelector('.package-details');
+            const verMasButton = this.previousElementSibling;
+            packageDetails.style.display = 'none';
+            this.style.display = 'none';
+            verMasButton.style.display = 'inline-block';
+        });
     });
 });
