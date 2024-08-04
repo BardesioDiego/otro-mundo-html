@@ -598,7 +598,20 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
-
+.title-section {
+  text-align: center;
+  margin: 20px 0;
+}
+.title-section h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+.title-section .separator {
+  width: 30%;
+  height: 3px;
+  background-color: #000;
+  margin: 0 auto;
+}
 @media (min-width: 576px) {
   .container, .container-sm {
     max-width: 540px;
